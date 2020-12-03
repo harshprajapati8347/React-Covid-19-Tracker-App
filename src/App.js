@@ -51,6 +51,9 @@ const App = () => {
 
     getCountriesData();
   }, []);
+
+  console.log(casesType);
+
   const onCountryChange = async (e) => {
     const countryCode = e.target.value;
 
@@ -63,7 +66,7 @@ const App = () => {
       .then((data) => {
         setInputCountry(countryCode);
         setCountryInfo(data);
-        setMapCenter([data.countryInfo.lat, data.countryInfo.lng]);
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(4);
       });
   };
